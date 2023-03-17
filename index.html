@@ -1,16 +1,200 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
-</head>
-<body>
-    Hello World
-    <script src="./assets/js/script.js"> </script>
-</body>
-</html>
+ <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>My Hungry Diary</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <script
+    src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+    crossorigin="anonymous"
+  ></script>
+  </head>
+  
+  <body>
 
+     <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Diary</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled"><b><p id="current-time-date"></p></a>
+      </li>
+    </ul> 
+  
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    My Hungry Diary!
+</button>
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Hello and Welcome to your Hungry Diary!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <label for="exampleDataList" class="form-label">My Hungry Diary</label>
+<input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Project name">
+<select class="form-select" aria-label="Default select example">
+  <option selected>Type of recipe</option>
+  <option value="1">Breakfast</option>
+  <option value="2">Lunch</option>
+  <option value="3">Dinner</option>
+  <option value="4">Snack</option>
+  <option value="5">Meal Prep</option>
+</select>
+<datalist id="datalistOptions">
+<div class="row py-3">
+  <label for="date" class="col-sm-4 col-form-label">Due Date: </label>
+  <div class="col-sm-8">
+    <input
+      type="text"
+      class="form-control"
+      id="datepicker"
+      autocomplete="off"
+    />
+  </div>
+</div>
+<div class="py-3">
+  <button type="submit" id="submit" value="Submit" class="btn btn-info">
+    Submit
+  </button>
+</div>
+</form>
+</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+    <div class="modal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Modal body text goes here.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+<!--End modal-->
+
+    <div class="bg-info text-light px-4 py-5 mb-5">
+      <div class="container text-center">
+        <h1>Hello Welcome to Your Hungry Diary</h1>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <h3>Hungry Diary</h3>
+          <form id="project-form">
+            <div class="row py-3">
+              <label for="project-name" class="col-sm-4 col-form-label"
+                >Meal Type:
+              </label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="project-name" />
+              </div>
+            </div>
+            <div class="row py-3">
+              <label for="date" class="col-sm-4 col-form-label">Due Date: 
+              </label>
+              <div class="col-sm-8">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="datepicker"
+                  autocomplete="off"
+                />
+              </div>
+            </div>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Hungry Diary Meal</option>
+              <option value="1">Breakfast</option>
+              <option value="2">Lunch</option>
+              <option value="3">Dinner</option>
+              <option value="4">Snack</option>
+              <option value="5">Meal Prep</option>
+            </select>
+            <div class="py-3">
+              <button type="submit" value="Submit" class="btn btn-info">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="col-6">
+          <h3>List of Recipes:</h3>
+          <ul class="list-group" id="project-lists"></ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="container">
+      <h2>2023 Project Calendar</h2>
+      <h4>~ Color each day depending on project events! ~</h4>
+      <p>Select Date:</p>
+      <div class="moods_container">
+        <button class="mood mood_1" id="mood_1">
+          <i class="far fa-laugh"></i>
+        </button>
+        <button class="mood mood_2" id="mood_2">
+          <i class="far fa-smile"></i>
+        </button>
+        <button class="mood mood_3" id="mood_3">
+          <i class="far fa-meh"></i>
+        </button>
+        <button class="mood mood_4" id="mood_4">
+          <i class="far fa-frown"></i>
+        </button>
+        <button class="mood mood_5" id="mood_5">
+          <i class="far fa-sad-tear"></i>
+        </button>
+      </div>
+      <p>then click on the circles below</p>
+      <button id="randomize" class="action_btn randomize">
+        <i class="fas fa-random"></i>
+      </button>
+      <button id="clear" class="action_btn clear">
+        <i class="fas fa-sync"></i>
+      </button>
+      <div id="calendar" class="calendar"></div>
+    </div> -->
+
+  </body>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script> 
+  <script type="text/javascript" src="assets/js/script.js"></script>
+ </html>
