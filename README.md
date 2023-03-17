@@ -1,6 +1,6 @@
 ## Project Title
 
-### Hungry Diary
+### Dinner Genie
 
 ## Project description
 
@@ -12,7 +12,7 @@
 
 ## User story
 
-- As a busy person 
+- As an indecisive person I want a recommendation based on the items I have in my fridge
 
 - I want a calendar that helps me plan my meals
 
@@ -21,6 +21,7 @@
 - I want to be able to list out the ingredients in my fridge
 
 - So that a recipe is generated based on those ingredients
+
 ## APIs to be used
 
 - Recipe - Food - Nutrition https://rapidapi.com/spoonacular/api/recipe-food-nutrition/
@@ -44,3 +45,7 @@
 ## MVP 
 
 #### A web application that will give you a food recommendation based on the ingredients you have and a random drink 🍻
+
+c934e6b007msh76d8b17e732ba94p14495ejsndf11a0d68e49
+
+4373181a13mshb854ccce485fbcfp1ec2f2jsn4a150d9d81a6
