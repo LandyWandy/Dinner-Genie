@@ -1,6 +1,7 @@
 /* attempted CSS style to hero image, not fully functioning */
-#hero-image {
+/* #hero-image {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -10,4 +11,14 @@
 #hero-image img {
     max-width:fit-content;
     height:100vh;
-  }
+  } */
+
+img {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+}
