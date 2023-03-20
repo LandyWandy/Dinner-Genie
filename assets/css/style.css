@@ -11,15 +11,4 @@
 #hero-image img {
     max-width:fit-content;
     height:100vh;
-  } */
-
-  img {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    max-width: 100%;
   }
-  
