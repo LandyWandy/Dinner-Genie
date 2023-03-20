@@ -1,14 +1,25 @@
 /* attempted CSS style to hero image, not fully functioning */
-#main {
+/* #hero-image {
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     height:100vh;
   }
   
-#main #hero-image img {
+#hero-image img {
+    max-width:fit-content;
+    height:100vh;
+  } */
+
+  img {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     max-width: 100%;
-    max-height: 100%;
-    padding: 20px;
-    border: 1px solid #ccc;
   }
+  
