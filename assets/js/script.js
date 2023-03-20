@@ -52,4 +52,8 @@ fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findB
 		.catch(err => console.error(err));
 
 
+		const userInput = getElementById('user-input');
+		
+
+
 		
