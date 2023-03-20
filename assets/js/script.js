@@ -8,6 +8,20 @@ let rafaelKey="4373181a13mshb854ccce485fbcfp1ec2f2jsn4a150d9d81a6"
 
 let keyArray = [landonKey,megsKey,rosaKey,bellaKey,rafaelKey]
 
+// currentIndex declared outside of getNextKey to keep track of the current position in th array
+
+let currentIndex = 0;
+
+// getNextKey will loop over each one of our keys every time the function is called/API is hit
+// This function is in place so that we don't exceed the limit of API hits we are allowed
+// When hitting the API put getNextKey(keyArray) in the 'X-RapidAPI-Key': (here), 
+
+function getNextKey(keyArray) {
+  const key = keyArray[currentIndex];
+  currentIndex = (currentIndex + 1) % keyArray.length;
+  return key;
+}
+
 // Create a function here that loops through keys in API
 
 // console.log(keyArray[0])
