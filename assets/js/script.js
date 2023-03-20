@@ -22,11 +22,20 @@ function getNextKey(keyArray) {
   return key;
 }
 
-// Create a function here that loops through keys in API
 
-// console.log(keyArray[0])
+let keyArrayIndex = 0
 
-// Food API by ingredient LEAVE KEY EMPTY WHEN WORKING IN JS
+// This function will will iterate through each of our API keys one by one every time the API is hit
+// To use this function place getNextKey() in the 'X-RapidAPI-Key': field
+
+function getNextKey() {
+	let key = keyArray[keyArrayIndex]
+	keyArrayIndex = (keyArrayIndex+1) % keyArray.length
+
+return key
+}
+
+// Food API by ingredient LEAVE API KEY EMPTY WHEN WORKING IN JS
 
 const Foodies = {
 	method: 'GET',
@@ -41,7 +50,7 @@ fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findB
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
 
-	// Drink API by ingredient LEAVE KEY EMPTY WHEN WORKING IN JS
+	// Drink API by ingredient LEAVE API KEY EMPTY WHEN WORKING IN JS
 
 	const Drinkies = {
 		method: 'GET',
