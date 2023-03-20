@@ -41,3 +41,6 @@ fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findB
 		.then(response => response.json())
 		.then(response => console.log(response))
 		.catch(err => console.error(err));
+
+
+		
