@@ -48,25 +48,50 @@ fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findB
 		}
 	};
 
+// This is to see what fields we can take in from the console
+
+function getRandomCocktail() {
+    fetch("https://thecocktaildb.p.rapidapi.com/random.php?a=Alcoholic", Drinkies)
+        .then((response) => response.json())
+        .then((data) => console.log(data.drinks[0]))
+        .catch((error) => console.error("Error:", error));
+}
+
+// This function displays random cocktail on DOM
+
+// function getRandomCocktail() {
+//     fetch("https://thecocktaildb.p.rapidapi.com/random.php", Drinkies)
+//         .then((response) => response.json())
+//         .then((data) => displayCocktail(data.drinks[0]))
+//         .catch((error) => console.error("Error:", error));
+// }
+
 // Used jquery for function below
 // This function will makes sure that the DOM is fully loaded before the getRandomCocktail function can be called
 
 $(document).ready(function () {
     $("#getRandomCocktail").click(getRandomCocktail);
+    $("#closeModal").click(closeModal);
 });
-
-function getRandomCocktail() {
-    fetch("https://thecocktaildb.p.rapidapi.com/random.php", Drinkies)
-        .then((response) => response.json())
-        .then((data) => displayCocktail(data.drinks[0]))
-        .catch((error) => console.error("Error:", error));
-}
 
 function displayCocktail(cocktail) {
     $("#cocktailName").text(cocktail.strDrink);
     $("#instructions").text(cocktail.strInstructions);
-	// image doesnt work right now
-	$("#drinkImage").text(cocktail.strDrinkThumb)
+
+    const ingredientsList = $("#ingredientsList");
+    ingredientsList.empty();
+    for (let i = 1; i <= 15; i++) {
+        const ingredient = cocktail[`strIngredient${i}`];
+        const measure = cocktail[`strMeasure${i}`];
+        if (ingredient && measure) {
+            const li = $("<li></li>").text(`${ingredient} - ${measure}`);
+            ingredientsList.append(li);
+        }
+    }
+
+    $("#cocktailModal").css("display", "block");
 }
 
-
+function closeModal() {
+    $("#cocktailModal").css("display", "none");
+}
