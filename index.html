@@ -4,37 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Dinner Genie</title>
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="shortcut icon" type="image/png" href="./assets/images/favicon-32x32.png"/>
+    <script src="https://kit.fontawesome.com/0e0d24c254.js" crossorigin="anonymous"></script>
 </head>
 <body>
     
     <div id="header">
-        <h1>Make your dinner wishes come true !</h1>
-        <nav> .... </nav>
+        <nav>
+            <ul><!--link to local storage here--></ul>
+        </nav>
 
     </div>
     <container id="main">
         <hero> image ???</hero>
         <img id=“hero-image” src="assets/images/DinnerGenieHero.png" alt=“Dinner Genie, Make Your Dinner Wishes Come True“/>
         <form>
-            don't know if i should use select or input here on the form
-            <input type="text" class ="user-input"
-            >
+            <!--don't know if i should use select or input here on the form-->
+            <input type="text" id="user-input">
                 <option></option>
                 <option></option>
                 <option></option>
-                <button type="button" onclick="inputValue"> icon here??</button>
+                <button type="button" onclick="inputValue"> <!--icon here??--></button>
             </input>
+            <div>
+                <h3 id="response"></h3>
+            </div>
         </form>
     </container>
-
-
-
     
     <script src="./assets/js/script.js"> </script>
 </body>
