@@ -54,10 +54,23 @@
       <div id="lamp" class="container">
         <div class="grid grid-cols-1 md:grid-cols-1">
           <div>
-            <img id=“tagline” src="./assets/images/lamp.png" alt=“Lamp says triple click for a surprise.“/>
+            <img id=“tagline” class="getRandomCocktail" src="./assets/images/lamp.png" alt=“Lamp says triple click for a surprise.“/>
           </div>
         </div>
     </div>
+
+    <div id="cocktailModal" class="hidden fixed top-0 left-0 w-full h-full bg-opacity-50 bg-gray-700 z-50">
+      <div>
+          <div class="bg-white p-4 max-w-lg mx-auto">
+              <h2 id="cocktailName"></h2>
+              <h3>Ingredients:</h3>
+              <ul id="ingredientsList"></ul>
+              <h3>Instructions:</h3>
+              <p id="instructions" class="mb"></p>
+              <button id="closeModal">Close</button>
+          </div>
+      </div>
+  </div>
    
     <div id="footer">
         <nav>
@@ -65,7 +78,7 @@
         </nav>
 
     </div>
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./assets/js/script.js"> </script>
 </body>
 </html>
