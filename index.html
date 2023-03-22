@@ -6,34 +6,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Dinner Genie</title>
+    <style>
+        body {
+            background-color: #2E1678;
+        }
+    </style>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="shortcut icon" type="image/png" href="./assets/images/favicon-32x32.png"/>
     <script src="https://kit.fontawesome.com/0e0d24c254.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
+    <div id="header" class="container">
+        <div class="grid grid-cols-1 md:grid-cols-2">
+          <div class="col-span-1">
+            <img id=“logo” src="./assets/images/dinnergenie.png" alt=“Dinner Genie logo.“/>
+          </div>
+          <div>
+            <img id=“tagline” src="./assets/images/MakeWishes.png" alt=“Make Your Dinner Wishes Come True!“/>
+          </div>
+        </div>
+    </div>
     
-    <div id="header">
+    <div id="main" class="container">
+        <div class="grid grid-cols-1 md:grid-cols-2">
+          <div class="col-span-1 flex items-center justify-center bg-cover bg-center " style="background-image: url('./assets/images/textbox.png')">
+          </div>
+          <div>
+            <img id=“tagline” src="./assets/images/genie.png" alt=“Genie holding a dinner plate.“/>
+          </div>
+        </div>
+    </div>
+    
+      <div id="recipes" class="container">
+        <div class="grid grid-cols-1 md:grid-cols-3">
+          <div class="col-span-1 bg-cover bg-center " style="background-image: url('./assets/images/recipecolumn.png')"> 
+          </div>
+          <div class="col-span-1 bg-cover bg-center " style="background-image: url('./assets/images/recipecolumn.png')">
+          </div>
+          <div class="col-span-1 bg-cover bg-center " style="background-image: url('./assets/images/recipecolumn.png')">
+            <img id=“logo” src="./assets/images/recipecolumn.png" alt=“Dinner Genie.“/>
+          </div>
+          
+        </div>
+      </div>
+
+      <div id="lamp" class="container">
+        <div class="grid grid-cols-1 md:grid-cols-1">
+          <div>
+            <img id=“tagline” src="./assets/images/lamp.png" alt=“Lamp says triple click for a surprise.“/>
+          </div>
+        </div>
+    </div>
+   
+    <div id="footer">
         <nav>
-            <ul><!--link to local storage here--></ul>
+          <img id=“footer” src="./assets/images/footer.png" alt=“footer style.“/>
         </nav>
 
     </div>
-    <container id="main">
-        <hero> image ???</hero>
-        <img id=“hero-image” src="assets/images/DinnerGenieHero.png" alt=“Dinner Genie, Make Your Dinner Wishes Come True“/>
-        <form>
-            <!--don't know if i should use select or input here on the form-->
-            <input type="text" id="user-input">
-                <option></option>
-                <option></option>
-                <option></option>
-                <button type="button" onclick="inputValue"> <!--icon here??--></button>
-            </input>
-            <div>
-                <h3 id="response"></h3>
-            </div>
-        </form>
-    </container>
     
     <script src="./assets/js/script.js"> </script>
 </body>
