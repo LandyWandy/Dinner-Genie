@@ -172,3 +172,5 @@ function displayCocktail(cocktail) {
 function closeModal() {
 $("#cocktailModal").addClass("hidden");
 }
+
+
