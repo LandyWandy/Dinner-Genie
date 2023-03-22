@@ -6,50 +6,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Dinner Genie</title>
+    <style>
+        body {
+            background-color: #2E1678;
+        }
+    </style>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="shortcut icon" type="image/png" href="./assets/images/favicon-32x32.png"/>
     <script src="https://kit.fontawesome.com/0e0d24c254.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
+    <div id="header" class="container">
+        <div class="grid grid-cols-1 md:grid-cols-2">
+          <div class="col-span-1">
+            <img id=“logo” src="./assets/images/dinnergenie.png" alt=“Dinner Genie logo.“/>
+          </div>
+          <div>
+            <img id=“tagline” src="./assets/images/MakeWishes.png" alt=“Make Your Dinner Wishes Come True!“/>
+          </div>
+        </div>
+    </div>
     
-    <div id="header">
+    <div id="main" class="container">
+        <div class="grid grid-cols-1 md:grid-cols-2">
+          <div class="col-span-1 flex items-center justify-center bg-cover bg-center " style="background-image: url('./assets/images/textbox.png')">
+            <form>
+                <input type="text" id="user-input"
+                placeholder="Enter your three ingredients">
+                    <button id="add"> add</button>
+                </input>
+                <div>
+                    <h3 id="warning"></h3> <!--ask bella if this is where it needs to be placed-->
+                    <button type="submit" class="lamp-btn">submit <i class="fa-sharp fa-solid fa-wand-magic-sparkles"></i><!--lamp icon here??--></button>
+                </div>
+            </form>
+        </div>
+          <div>
+            <img id=“tagline” src="./assets/images/genie.png" alt=“Genie holding a dinner plate.“/>
+          </div>
+        </div>
+    </div>
+    
+      <div id="recipes" class="container">
+        <div class="grid grid-cols-1 md:grid-cols-3">
+          <div id="recipe-1" class="col-span-1 bg-cover bg-center " style="background-image: url('./assets/images/recipecolumn.png')"> 
+          </div>
+          <div id="recipe-2" class="col-span-1 bg-cover bg-center " style="background-image: url('./assets/images/recipecolumn.png')">
+          </div>
+          <div id="recipe-3"class="col-span-1 bg-cover bg-center " style="background-image: url('./assets/images/recipecolumn.png')">
+            <img id=“logo” src="./assets/images/recipecolumn.png" alt=“Dinner Genie.“/>
+          </div>
+          
+        </div>
+      </div>
+
+      <div id="lamp" class="container">
+        <div class="grid grid-cols-1 md:grid-cols-1">
+          <div>
+            <img id=“tagline” class="getRandomCocktail" src="./assets/images/lamp.png" alt=“Lamp says triple click for a surprise.“/>
+          </div>
+        </div>
+    </div>
+
+    <div id="cocktailModal" class="hidden fixed top-0 left-0 w-full h-full bg-opacity-50 bg-gray-700 z-50">
+      <div>
+          <div class="bg-white p-4 max-w-lg mx-auto">
+              <h2 id="cocktailName"></h2>
+              <h3>Ingredients:</h3>
+              <ul id="ingredientsList"></ul>
+              <h3>Instructions:</h3>
+              <p id="instructions" class="mb"></p>
+              <button id="closeModal">Close</button>
+          </div>
+      </div>
+  </div>
+   
+    <div id="footer">
         <nav>
-            <ul><!--link to local storage here--></ul>
+          <img id=“footer” src="./assets/images/footer.png" alt=“footer style.“/>
+          <a href="#top">Back to Top</a>
         </nav>
-    </div>
-    <container id="main">
-        <img id=“hero-image” src="assets/images/DinnerGenieHero.png" alt=“Dinner Genie, Make Your Dinner Wishes Come True“/>
-        <form>
-            <!--don't know if i should use select or input here on the form-->
-            <input type="text" id="user-input"
-            placeholder="Enter your three ingredients">
-                <button type="submit" class="lamp-btn">submit <i class="fa-sharp fa-solid fa-wand-magic-sparkles"></i><!--lamp icon here??--></button>
-            </input>
-            <div>
-                <h3 id="response"></h3>
-            </div>
-        </form>
-    </container>
-    <container>
-        <section id="recipe-1">
-            <p>recipe one</p>
-        </section>
-        <section id="recipe-2">
-            <p>recipe two</p>
-        </section>
-        <section id="recipe-3">
-            <p>recipe three</p>
-        </section>
-        <aside> <!--local storage here--></aside>
-    </container>
-    <div>
-        <button type="submit" class="drink-btn">Click here for your drink of the day !</button>
-    </div>
-    <!--modal here -->
 
-
-    
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./assets/js/script.js"> </script>
 </body>
 </html>
-
