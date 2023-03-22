@@ -31,7 +31,17 @@
     <div id="main" class="container">
         <div class="grid grid-cols-1 md:grid-cols-2">
           <div class="col-span-1 flex items-center justify-center bg-cover bg-center " style="background-image: url('./assets/images/textbox.png')">
-          </div>
+            <form>
+                <input type="text" id="user-input"
+                placeholder="Enter your three ingredients">
+                    <button id="add"> add</button>
+                </input>
+                <div>
+                    <h3 id="warning"></h3> <!--ask bella if this is where it needs to be placed-->
+                    <button type="submit" class="lamp-btn">submit <i class="fa-sharp fa-solid fa-wand-magic-sparkles"></i><!--lamp icon here??--></button>
+                </div>
+            </form>
+        </div>
           <div>
             <img id=“tagline” src="./assets/images/genie.png" alt=“Genie holding a dinner plate.“/>
           </div>
@@ -40,11 +50,11 @@
     
       <div id="recipes" class="container">
         <div class="grid grid-cols-1 md:grid-cols-3">
-          <div class="col-span-1 bg-cover bg-center " style="background-image: url('./assets/images/recipecolumn.png')"> 
+          <div id="recipe-1" class="col-span-1 bg-cover bg-center " style="background-image: url('./assets/images/recipecolumn.png')"> 
           </div>
-          <div class="col-span-1 bg-cover bg-center " style="background-image: url('./assets/images/recipecolumn.png')">
+          <div id="recipe-2" class="col-span-1 bg-cover bg-center " style="background-image: url('./assets/images/recipecolumn.png')">
           </div>
-          <div class="col-span-1 bg-cover bg-center " style="background-image: url('./assets/images/recipecolumn.png')">
+          <div id="recipe-3"class="col-span-1 bg-cover bg-center " style="background-image: url('./assets/images/recipecolumn.png')">
             <img id=“logo” src="./assets/images/recipecolumn.png" alt=“Dinner Genie.“/>
           </div>
           
@@ -75,6 +85,7 @@
     <div id="footer">
         <nav>
           <img id=“footer” src="./assets/images/footer.png" alt=“footer style.“/>
+          <a href="#top">Back to Top</a>
         </nav>
 
     </div>
@@ -82,4 +93,3 @@
     <script src="./assets/js/script.js"> </script>
 </body>
 </html>
-
