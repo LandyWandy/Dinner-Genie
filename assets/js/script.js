@@ -59,18 +59,18 @@ function getRandomCocktail() {
 
 // This function displays random cocktail on DOM
 
-// function getRandomCocktail() {
-//     fetch("https://thecocktaildb.p.rapidapi.com/random.php", Drinkies)
-//         .then((response) => response.json())
-//         .then((data) => displayCocktail(data.drinks[0]))
-//         .catch((error) => console.error("Error:", error));
-// }
+function getRandomCocktail() {
+    fetch("https://thecocktaildb.p.rapidapi.com/random.php", Drinkies)
+        .then((response) => response.json())
+        .then((data) => displayCocktail(data.drinks[0]))
+        .catch((error) => console.error("Error:", error));
+}
 
 // Used jquery for function below
 // This function will makes sure that the DOM is fully loaded before the getRandomCocktail function can be called
 
 $(document).ready(function () {
-    $("#getRandomCocktail").click(getRandomCocktail);
+    $(".getRandomCocktail").click(getRandomCocktail);
     $("#closeModal").click(closeModal);
 });
 
@@ -89,9 +89,9 @@ function displayCocktail(cocktail) {
         }
     }
 
-    $("#cocktailModal").css("display", "block");
-}
+    $("#cocktailModal").removeClass("hidden");
 
+}
 function closeModal() {
-    $("#cocktailModal").css("display", "none");
+$("#cocktailModal").addClass("hidden");
 }

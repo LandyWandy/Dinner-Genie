@@ -54,38 +54,29 @@
       <div id="lamp" class="container">
         <div class="grid grid-cols-1 md:grid-cols-1">
           <div>
-            <img id=“tagline” src="./assets/images/lamp.png" alt=“Lamp says triple click for a surprise.“/>
+            <img id=“tagline” class="getRandomCocktail" src="./assets/images/lamp.png" alt=“Lamp says triple click for a surprise.“/>
           </div>
         </div>
     </div>
+
+    <div id="cocktailModal" class="hidden fixed top-0 left-0 w-full h-full bg-opacity-50 bg-gray-700 z-50">
+      <div>
+          <div class="bg-white p-4 max-w-lg mx-auto">
+              <h2 id="cocktailName"></h2>
+              <h3>Ingredients:</h3>
+              <ul id="ingredientsList"></ul>
+              <h3>Instructions:</h3>
+              <p id="instructions" class="mb"></p>
+              <button id="closeModal">Close</button>
+          </div>
+      </div>
+  </div>
    
     <div id="footer">
         <nav>
           <img id=“footer” src="./assets/images/footer.png" alt=“footer style.“/>
         </nav>
 
-    </div>
-    
-    <container id="main">
-        <img id=“hero-image” src="assets/images/DinnerGenieHero.png" alt=“Dinner Genie, Make Your Dinner Wishes Come True“/>
-        <form>
-            <!--don't know if i should use select or input here on the form-->
-            <input type="text" id="user-input">
-                <option></option>
-                <option></option>
-                <option></option>
-                <button type="button" onclick="inputValue"> <!--icon here??--></button>
-            </input>
-        </form>
-    </container>
-    <button id="getRandomCocktail">Get Random Cocktail</button>
-    <div class="drink-modal" id="cocktailModal">
-        <div class="drink-modal-content">
-            <h5 id="cocktailName"></h5>
-            <ul id="ingredientsList"></ul>
-            <p id="instructions"></p>
-            <button id="closeModal">Close</button>
-        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./assets/js/script.js"> </script>
