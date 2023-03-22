@@ -71,3 +71,54 @@ fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findB
 
 			
 		}
+
+
+		const inputEl = document.getElementById('user-input');
+const badgesEl = document.getElementById('badges');
+badgesEl.style = 'display: flex';
+
+var allIngredients = [];
+
+document.getElementById('add').addEventListener('click', function() {
+    var ingredient = inputEl.value;
+
+    if(allIngredients.length >= 3) {
+        document.getElementById('warning').textContent = 'up to 3!!'
+    }else{
+        allIngredients.push(ingredient)
+    }
+
+    badgesEl.innerHTML = ''
+    for(var i = 0; i < allIngredients.length; i++){
+
+        var divEl = document.createElement('div');
+        divEl.textContent = allIngredients[i];
+        divEl.style = "border: 1px solid grey; padding: 3px 5px; margin: 5px";
+
+        badgesEl.appendChild(divEl)
+    }
+})
+
+document.getElementById('search-btn').addEventListener('click', function() {
+    // call api with all ingredients.
+    fetchRecipe();
+})
+
+function fetchRecipe(){
+    const stringIngredients = allIngredients.join(",");
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '72c9585311msh4f40ae66cddb063p1515bfjsnc61882058676',
+            'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
+        }
+    };
+    
+    fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?ingredients=' + stringIngredients + '&number=10&ignorePantry=true&ranking=1', options)
+        .then(response => response.json())
+        .then(response => {
+            console.log(response)
+            // render page using response variable
+        })
+        .catch(err => console.error(err));
+}
