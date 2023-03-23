@@ -75,9 +75,9 @@
 		// }
 
 
-		const inputEl = document.getElementById('user-input');
+const inputEl = document.getElementById('user-input');
 const badgesEl = document.getElementById('badges');
-// badgesEl.style = 'display: flex';
+badgesEl.style = 'display: flex';
 
 var allIngredients = [];
 
