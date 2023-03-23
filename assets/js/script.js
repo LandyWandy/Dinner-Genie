@@ -1,41 +1,41 @@
-let landonKey="7e3f137972mshd515359a84b2ff9p113446jsn700b94e62ef7"
-let megsKey="c934e6b007msh76d8b17e732ba94p14495ejsndf11a0d68e49"
-let rosaKey="4bddcff26bmsh3341d016a17aa08p1a829ejsnf02400f6c0df"
-let bellaKey="72c9585311msh4f40ae66cddb063p1515bfjsnc61882058676"
-let rafaelKey="4373181a13mshb854ccce485fbcfp1ec2f2jsn4a150d9d81a6"
+// let landonKey="7e3f137972mshd515359a84b2ff9p113446jsn700b94e62ef7"
+// let megsKey="c934e6b007msh76d8b17e732ba94p14495ejsndf11a0d68e49"
+// let rosaKey="4bddcff26bmsh3341d016a17aa08p1a829ejsnf02400f6c0df"
+// let bellaKey="72c9585311msh4f40ae66cddb063p1515bfjsnc61882058676"
+// let rafaelKey="4373181a13mshb854ccce485fbcfp1ec2f2jsn4a150d9d81a6"
 
-// Array of everyones API keys
+// // Array of everyones API keys
 
-let keyArray = [landonKey,megsKey,rosaKey,bellaKey,rafaelKey]
+// let keyArray = [landonKey,megsKey,rosaKey,bellaKey,rafaelKey]
 
-// currentIndex declared outside of getNextKey to keep track of the current position in th array
+// // currentIndex declared outside of getNextKey to keep track of the current position in th array
 
-let keyArrayIndex = 0
+// let keyArrayIndex = 0
 
 // This function will will iterate through each of our API keys one by one every time the API is hit
 // To use this function place getNextKey() in the 'X-RapidAPI-Key': field
 
-function getNextKey() {
-	let key = keyArray[keyArrayIndex]
-	keyArrayIndex = (keyArrayIndex+1) % keyArray.length
+// function getNextKey() {
+// 	let key = keyArray[keyArrayIndex]
+// 	keyArrayIndex = (keyArrayIndex+1) % keyArray.length
 
-return key
-}
+// return key
+// }
 
-// Food API by ingredient LEAVE API KEY EMPTY WHEN WORKING IN JS
+// // Food API by ingredient LEAVE API KEY EMPTY WHEN WORKING IN JS
 
-const Foodies = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': "",
-		'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
-	}
-};
+// const Foodies = {
+// 	method: 'GET',
+// 	headers: {
+// 		'X-RapidAPI-Key': "",
+// 		'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
+// 	}
+// };
 
-fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?ingredients=apples%2Cflour%2Csugar&number=3&ignorePantry=true&ranking=1', Foodies)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
+// fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?ingredients=apples%2Cflour%2Csugar&number=3&ignorePantry=true&ranking=1', Foodies)
+// 	.then(response => response.json())
+// 	.then(response => console.log(response))
+// 	.catch(err => console.error(err));
 
 
 	// Drink API by ingredient LEAVE API KEY EMPTY WHEN WORKING IN JS
@@ -55,29 +55,29 @@ fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findB
 
 
 		
-		const wandBtn = document.getElementById('wand-btn');
-		const recipeList = document.getElementById('recipe');
-		const recipeDetailsContent = document.querySelector('.recipe-details-content');
-		const recipeCloseBtn = document.getElementById('recipe-close-btn');
+		// const wandBtn = document.getElementById('wand-btn');
+		// const recipeList = document.getElementById('recipe');
+		// const recipeDetailsContent = document.querySelector('.recipe-details-content');
+		// const recipeCloseBtn = document.getElementById('recipe-close-btn');
 
 
-		wandBtn.addEventListener('click', getRecipeList)
+		// wandBtn.addEventListener('click', getRecipeList)
 
 
 
 
 
-		function getRecipeList(){
-			let userInput = document.querySelector('.user-input').value.trim();
-			fetch('')
+		// function getRecipeList(){
+		// 	let userInput = document.querySelector('.user-input').value.trim();
+		// 	fetch('')
 
 			
-		}
+		// }
 
 
 		const inputEl = document.getElementById('user-input');
 const badgesEl = document.getElementById('badges');
-badgesEl.style = 'display: flex';
+// badgesEl.style = 'display: flex';
 
 var allIngredients = [];
 
@@ -101,7 +101,7 @@ document.getElementById('add').addEventListener('click', function() {
     }
 })
 
-document.getElementById('search-btn').addEventListener('click', function() {
+document.getElementById('wand-btn').addEventListener('click', function() {
     // call api with all ingredients.
     fetchRecipe();
 })
@@ -124,6 +124,14 @@ function fetchRecipe(){
         })
         .catch(err => console.error(err));
 }
+
+
+
+
+
+
+
+
 
 // This is to see what fields we can take in from the console
 
