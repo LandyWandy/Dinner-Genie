@@ -31,7 +31,17 @@
     <div id="main" class="container">
         <div class="grid grid-cols-1 md:grid-cols-2">
           <div class="col-span-1 flex items-center justify-center bg-cover bg-center " style="background-image: url('./assets/images/textbox.png')">
-          </div>
+            <form>
+                <input type="text" id="user-input"
+                placeholder="Enter your three ingredients">
+                    <button class="" id="add"> Add</button>
+                </input>
+                <div>
+                    <h3 id="warning"></h3> <!--ask bella if this is where it needs to be placed-->
+                    <button type="submit" class="lamp-btn">submit <i class="fa-sharp fa-solid fa-wand-magic-sparkles"></i><!--lamp icon here??--></button>
+                </div>
+            </form>
+        </div>
           <div>
             <img id=“tagline” src="./assets/images/genie.png" alt=“Genie holding a dinner plate.“/>
           </div>
@@ -40,11 +50,11 @@
     
       <div id="recipes" class="container">
         <div class="grid grid-cols-1 md:grid-cols-3">
-          <div class="col-span-1 bg-cover bg-center " style="background-image: url('./assets/images/recipecolumn.png')"> 
+          <div id="recipe-1" class="col-span-1 bg-cover bg-center " style="background-image: url('./assets/images/recipecolumn.png')"> 
           </div>
-          <div class="col-span-1 bg-cover bg-center " style="background-image: url('./assets/images/recipecolumn.png')">
+          <div id="recipe-2" class="col-span-1 bg-cover bg-center " style="background-image: url('./assets/images/recipecolumn.png')">
           </div>
-          <div class="col-span-1 bg-cover bg-center " style="background-image: url('./assets/images/recipecolumn.png')">
+          <div id="recipe-3"class="col-span-1 bg-cover bg-center " style="background-image: url('./assets/images/recipecolumn.png')">
             <img id=“logo” src="./assets/images/recipecolumn.png" alt=“Dinner Genie.“/>
           </div>
           
@@ -54,22 +64,32 @@
       <div id="lamp" class="container">
         <div class="grid grid-cols-1 md:grid-cols-1">
           <div>
-            <img id=“tagline” src="./assets/images/lamp.png" alt=“Lamp says triple click for a surprise.“/>
+            <img id=“tagline” class="getRandomCocktail" src="./assets/images/lamp.png" alt=“Lamp says triple click for a surprise.“/>
           </div>
         </div>
     </div>
+
+    <div id="cocktailModal" class="hidden fixed top-0 left-0 w-full h-full bg-opacity-50 bg-gray-700 z-50">
+      <div>
+          <div class="bg-white p-4 max-w-lg mx-auto">
+              <h2 id="cocktailName"></h2>
+              <h3>Ingredients:</h3>
+              <ul id="ingredientsList"></ul>
+              <h3>Instructions:</h3>
+              <p id="instructions" class="mb"></p>
+              <button id="closeModal">Close</button>
+          </div>
+      </div>
+  </div>
    
     <div id="footer">
         <nav>
           <img id=“footer” src="./assets/images/footer.png" alt=“footer style.“/>
+          <a href="#top">Back to Top</a>
         </nav>
 
     </div>
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./assets/js/script.js"> </script>
 </body>
 </html>
-
-<header>
-    <h1> hello hi </h1>
-</header>
