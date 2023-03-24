@@ -159,5 +159,15 @@ function displayCocktail(cocktail) {
 function closeModal() {
     $("#cocktailModal").addClass("hidden");
 }
+//Wand Button Bounce :D
+const button = document.getElementById('wand-btn');
 
+button.addEventListener('click', function() {
+ 	button.classList.add('animate__animated', 'animate__bounce');
+	 console.log('Wand clicked!');
+});
+setTimeout(function() {
+    button.classList.remove('animate__animated', 'animate__bounce');
+	console.log('Wand clicked!');
+  }, 1000);
 

@@ -12,6 +12,7 @@
         }
     </style>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="shortcut icon" type="image/png" href="./assets/images/favicon-32x32.png"/>
     <script src="https://kit.fontawesome.com/0e0d24c254.js" crossorigin="anonymous"></script>
 </head>
@@ -30,17 +31,17 @@
     
     <div id="main" class="container">
         <div class="grid grid-cols-1 md:grid-cols-2">
-          <div class="col-span-1 flex items-center justify-center bg-cover bg-center " style="background-image: url('./assets/images/textbox.png')">
+          <div class="col-span-1 flex items-center justify-center bg-cover bg-center" style="background-image: url('./assets/images/textbox.png')">
             <!-- <form> -->
 
 
               <div>
 
-                <input id="user-input" 
+                <input class="w-4/5 flex-auto px-2 py-2 leading-tight text-gray-700 bg-gray-100 rounded-md border border-gray-400 focus:outline-none focus:bg-white focus:border-blue-500" id="user-input"id="user-input" 
                 placeholder="Enter your 3 ingredients"/>
 
                 
-                    <button id="add">add</button>
+                    <button class="bg-pink-400 flex-auto text-white font-bold py-1 px-1 rounded active:bg-pink-700 focus:outline-none focus:ring focus:ring-pink-300 hover:bg-pink-600" id="add">add</button>
 
                     </div>
                 
@@ -51,6 +52,8 @@
 
                     <div>
                      <button id="wand-btn"><i class="fa-sharp fa-solid fa-wand-magic-sparkles"></i></button>
+                     
+                     <button class="bg-violet-400 w-3/4 flex-auto text-white font-bold py-1 px-1 rounded active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 hover:bg-pink-600" id="Submit">Submit</button>
                     </div>
             
         </div>
@@ -84,15 +87,16 @@
         </div>
     </div>
 
-    <div id="cocktailModal" class="hidden fixed top-0 left-0 w-full h-full bg-opacity-50 bg-gray-700 z-50">
+    <div class="flex items-center justify-center"></div>
+    <div id="cocktailModal" class="hidden fixed top-0 left-0 w-fit h-fit bg-opacity-50 bg-gray-300 z-50 p-4 m-4 border-8 border-x-orange-500 border-y-orange-700 flex items-center justify-center">
       <div>
-          <div class="bg-white p-4 max-w-lg mx-auto">
-              <h2 id="cocktailName"></h2>
+          <div class="bg-amber-400 p-4 max-w-lg mx-auto">
+              <h2 class="text-xl text-center text-bold" id="cocktailName"></h2>
               <h3>Ingredients:</h3>
-              <ul id="ingredientsList"></ul>
+              <ul class="list-style-type: decimal;" id="ingredientsList"></ul>
               <h3>Instructions:</h3>
               <p id="instructions" class="mb"></p>
-              <button id="closeModal">Close</button>
+              <button class="text-sm text-center text-bold" id="closeModal">Close</button>
           </div>
       </div>
   </div>
