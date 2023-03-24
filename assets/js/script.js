@@ -22,59 +22,6 @@ function getNextKey() {
     return key
 }
 
-// // Food API by ingredient LEAVE API KEY EMPTY WHEN WORKING IN JS
-
-const Foodies = {
-    method: 'GET',
-    headers: {
-        'X-RapidAPI-Key': "",
-        'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
-    }
-};
-
-// fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?ingredients=apples%2Cflour%2Csugar&number=3&ignorePantry=true&ranking=1', Foodies)
-// 	.then(response => response.json())
-// 	.then(response => console.log(response))
-// 	.catch(err => console.error(err));
-
-
-// Drink API by ingredient LEAVE API KEY EMPTY WHEN WORKING IN JS
-
-const Drinkies = {
-    method: 'GET',
-    headers: {
-        'X-RapidAPI-Key': getNextKey(),
-        'X-RapidAPI-Host': 'the-cocktail-db.p.rapidapi.com'
-    }
-};
-
-// fetch('https://the-cocktail-db.p.rapidapi.com/search.php?s=vodka', Drinkies)
-// 	.then(response => response.json())
-// 	.then(response => console.log(response))
-// 	.catch(err => console.error(err));
-
-
-
-// const wandBtn = document.getElementById('wand-btn');
-// const recipeList = document.getElementById('recipe');
-// const recipeDetailsContent = document.querySelector('.recipe-details-content');
-// const recipeCloseBtn = document.getElementById('recipe-close-btn');
-
-
-// wandBtn.addEventListener('click', getRecipeList)
-
-
-
-
-
-// function getRecipeList(){
-// 	let userInput = document.querySelector('.user-input').value.trim();
-// 	fetch('')
-
-
-// }
-
-
 const inputEl = document.getElementById('user-input');
 const badgesEl = document.getElementById('badges');
 badgesEl.style = 'display: flex';
@@ -84,20 +31,24 @@ var ingredientsArray = [];
 
 document.getElementById('add').addEventListener('click', function () {
     var userIngredient = inputEl.value;
-    ingredientsArray = JSON.parse(localStorage.getItem('ingredients'))
-    if (ingredientsArray.length >= 3) {
+    // ingredientsArray = JSON.parse(localStorage.getItem('ingredients'))
+    
+	if (ingredientsArray.length >= 3) {
         document.getElementById('warning').textContent = 'up to 3!!'
     } else {
         ingredientsArray.push(userIngredient)
         //ingredientsArray.push(ingredient);
 
         localStorage.setItem('ingredients', JSON.stringify(ingredientsArray));
+		
+		
     }
-    loadIngredients();
+    
+	loadIngredients();
 
     inputEl.value = '';
 })
-loadIngredients();
+// loadIngredients();
 
 document.getElementById('wand-btn').addEventListener('click', function () {
     // call api with all ingredients.
@@ -105,6 +56,7 @@ document.getElementById('wand-btn').addEventListener('click', function () {
 })
 
 function loadIngredients() {
+	console.log(ingredientsArray)
     if (localStorage.getItem('ingredients')) {
         ingredientsArray = JSON.parse(localStorage.getItem('ingredients'))
     }
@@ -128,12 +80,12 @@ deleteEl.forEach((button) => {
     button.addEventListener('click', function() {
         var deleteIngredient = button.parentNode
         deleteIngredient.remove();
-        var ingredientsArray = JSON.parse(localStorage.getItem('ingredients'));
-        var ingredientIndex = ingredientsArray.indexOf(`${button.id}`);
+        var existingArray = JSON.parse(localStorage.getItem('ingredients'));
+        var ingredientIndex = existingArray.indexOf(`${button.id}`);
         if (ingredientIndex > -1){
-            ingredientsArray.splice(ingredientIndex, 1)
+            existingArray.splice(ingredientIndex, 1)
         }
-        localStorage.setItem('ingredients', JSON.stringify(ingredientsArray));
+        localStorage.setItem('ingredients', JSON.stringify(existingArray));
         console.log(button.id);
     })
 });
@@ -142,7 +94,7 @@ deleteEl.forEach((button) => {
 
 
 function fetchRecipe() {
-    ingredientsArray = JSON.parse(localStorage.getItem('ingredients'))
+    // ingredientsArray = JSON.parse(localStorage.getItem('ingredients'))
     const stringIngredients = ingredientsArray.join(",");
     const options = {
         method: 'GET',
@@ -162,24 +114,14 @@ console.log(stringIngredients);
         .catch(err => console.error(err));
 }
 
-
-
-
-
-
-
-
-
-// This is to see what fields we can take in from the console
-
-function getRandomCocktail() {
-    fetch("https://thecocktaildb.p.rapidapi.com/random.php?a=Alcoholic", Drinkies)
-        .then((response) => response.json())
-        .then((data) => console.log(data.drinks[0]))
-        .catch((error) => console.error("Error:", error));
-}
-
 // This function displays random cocktail on DOM
+const Drinkies = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': getNextKey(),
+		'X-RapidAPI-Host': 'the-cocktail-db.p.rapidapi.com'
+	}
+};
 
 function getRandomCocktail() {
     fetch("https://thecocktaildb.p.rapidapi.com/random.php", Drinkies)
