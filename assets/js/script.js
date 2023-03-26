@@ -95,7 +95,7 @@ function fetchRecipe() {
   const options = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "72c9585311msh4f40ae66cddb063p1515bfjsnc61882058676",
+      "X-RapidAPI-Key": getNextKey(),
       "X-RapidAPI-Host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
     },
   };
@@ -104,15 +104,52 @@ function fetchRecipe() {
   fetch(
     "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?ingredients=" +
       stringIngredients +
-      "&number=10&ignorePantry=true&ranking=1",
+      "&number=3&ignorePantry=true&ranking=1",
     options
   )
     .then((response) => response.json())
     .then((response) => {
-      console.log(response);
+      recipeToPage(response);
       // render page using response variable
     })
     .catch((err) => console.error(err));
+}
+
+// This function displays 3 recipes on the DOM
+function recipeToPage(recipes) {
+    for (let i = 0; i < recipes.length; i++) {
+        const recipe = recipes[i];
+        const recipeDiv = $(`#recipe-${i + 1}`);
+        recipeDiv.empty();
+
+        const recipeName = $('<h2></h2>').text(recipe.title);
+        recipeDiv.append(recipeName);
+
+        const recipeImage = $('<img></img>')
+            .attr('src', recipe.image)
+            .attr('alt', recipe.title);
+        recipeDiv.append(recipeImage);
+
+        const usedIngredientsTitle = $('<h4></h4>').text('Ingredients Used:');
+        recipeDiv.append(usedIngredientsTitle);
+
+        const usedIngredientsList = $('<ul></ul>');
+        recipe.usedIngredients.forEach(ingredient => {
+            let usedIngredientName = $('<li></li>').text(ingredient.name);
+            usedIngredientsList.append(usedIngredientName);
+        });
+        recipeDiv.append(usedIngredientsList);
+
+        const missedIngredientsTitle = $('<h4></h4>').text('Ingredients Not Used:');
+        recipeDiv.append(missedIngredientsTitle);
+
+        const missedIngredientsList = $('<ul></ul>');
+        recipe.missedIngredients.forEach(ingredient => {
+            let missedIngredientName = $('<li></li>').text(ingredient.name);
+            missedIngredientsList.append(missedIngredientName);
+        });
+        recipeDiv.append(missedIngredientsList);
+    }
 }
 
 // This function displays random cocktail on DOM
