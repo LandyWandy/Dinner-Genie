@@ -62,8 +62,8 @@ function loadIngredients() {
   for (var i = 0; i < ingredientsArray.length; i++) {
     var divEl = document.createElement("div");
     var buttonEl = document.createElement("button");
-    divEl.textContent = ingredientsArray[i];
-    divEl.style = "border: 1px solid grey; padding: 3px 5px; margin: 5px";
+    divEl.textContent = " " + ingredientsArray[i] + " ";
+    divEl.style = "border: 1px solid gold; border-radius: 10px; padding: 3px 5px; margin: 5px";
     divEl.setAttribute("id", ingredientsArray[i]);
     buttonEl.innerHTML = "<span style='color:red'> X </span>";
     buttonEl.classList.add("delete");
