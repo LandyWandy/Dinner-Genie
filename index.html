@@ -1,114 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Dinner Genie</title>
     <style>
-        body {
-            background-color: #2E1678;
-        }
+      body {
+        background-color: #2e1678;
+      }
     </style>
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="shortcut icon" type="image/png" href="./assets/images/favicon-32x32.png"/>
-    <script src="https://kit.fontawesome.com/0e0d24c254.js" crossorigin="anonymous"></script>
-</head>
-<body>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <script
+      src="https://kit.fontawesome.com/0e0d24c254.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
+  <body>
     <div id="header" class="container">
-        <div class="grid grid-cols-1 md:grid-cols-2">
-          <div class="col-span-1">
-            <img id=“logo” src="./assets/images/dinnergenie.png" alt=“Dinner Genie logo.“/>
-          </div>
-          <div>
-            <img id=“tagline” src="./assets/images/MakeWishes.png" alt=“Make Your Dinner Wishes Come True!“/>
-          </div>
+      <div class="grid grid-cols-1 md:grid-cols-2">
+        <div class="col-span-1">
+          <img
+            id="“logo”"
+            src="./assets/images/dinnergenie.png"
+            alt="“Dinner"
+            Genie
+            logo.“
+          />
         </div>
-    </div>
-    
-    <div id="main" class="container">
-        <div class="grid grid-cols-1 md:grid-cols-2">
-          <div class="col-span-1 flex items-center justify-center bg-cover bg-center" style="background-image: url('./assets/images/textbox.png')">
-            <!-- <form> -->
-
-
-              <div>
-
-                <input class="w-4/5 flex-auto px-2 py-2 leading-tight text-gray-700 bg-gray-100 rounded-md border border-gray-400 focus:outline-none focus:bg-white focus:border-blue-500" id="user-input"id="user-input" 
-                placeholder="Enter your 3 ingredients"/>
-
-                
-                    <button class="bg-pink-400 flex-auto text-white font-bold py-1 px-1 rounded active:bg-pink-700 focus:outline-none focus:ring focus:ring-pink-300 hover:bg-pink-600" id="add">add</button>
-
-                    </div>
-                
-                
-                    <div id="warning"></div> <!--ask bella if this is where it needs to be placed-->
-                    <div id="badges"></div>
-
-
-                    <div>
-                     <button id="wand-btn"><i class="fa-sharp fa-solid fa-wand-magic-sparkles"></i></button>
-                     
-                     <button class="bg-violet-400 w-3/4 flex-auto text-white font-bold py-1 px-1 rounded active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 hover:bg-pink-600" id="Submit">Submit</button>
-                    </div>
-            
-        </div>
-
-
-
-          <div>
-            <img id=“tagline” src="./assets/images/genie.png" alt=“Genie holding a dinner plate.“/>
-          </div>
-        </div>
-    </div>
-    
-      <div id="recipes" class="container">
-        <div class="grid grid-cols-1 md:grid-cols-3">
-          <div id="recipe-1" class="col-span-1 bg-cover bg-center " style="background-image: url('./assets/images/recipecolumn.png')"> 
-          </div>
-          <div id="recipe-2" class="col-span-1 bg-cover bg-center " style="background-image: url('./assets/images/recipecolumn.png')">
-          </div>
-          <div id="recipe-3"class="col-span-1 bg-cover bg-center " style="background-image: url('./assets/images/recipecolumn.png')">
-            <img id=“logo” src="./assets/images/recipecolumn.png" alt=“Dinner Genie.“/> 
-          </div>
-          
+        <div>
+          <img
+            id="“tagline”"
+            src="./assets/images/MakeWishes.png"
+            alt="“Make"
+            Your
+            Dinner
+            Wishes
+            Come
+            True!“
+          />
         </div>
       </div>
+    </div>
 
-      <div id="lamp" class="container">
-        <div class="grid grid-cols-1 md:grid-cols-1">
+    <div id="main" class="container">
+      <div class="grid grid-cols-1 md:grid-cols-2">
+        <div
+          class="col-span-1 flex items-center justify-center bg-cover bg-center"
+          style="background-image: url('./assets/images/textbox.png')"
+        >
+          <!-- <form> -->
+
           <div>
-            <img id=“tagline” class="getRandomCocktail" src="./assets/images/lamp.png" alt=“Lamp says triple click for a surprise.“/>
+            <input
+              class="w-4/5 flex-auto px-2 py-2 leading-tight text-gray-700 bg-gray-100 rounded-md border border-gray-400 focus:outline-none focus:bg-white focus:border-blue-500"
+              id="user-input"
+              id="user-input"
+              placeholder="Enter your 3 ingredients"
+            />
+
+            <button
+              class="bg-pink-400 flex-auto text-white font-bold py-1 px-1 rounded active:bg-pink-700 focus:outline-none focus:ring focus:ring-pink-300 hover:bg-pink-600"
+              id="add"
+            >
+              add
+            </button>
+            <br />
+          </div>
+
+          <div id="warning"></div>
+          <!--ask bella if this is where it needs to be placed-->
+          <div id="badges"><br /></div>
+
+          <div>
+            <button id="wand-btn">
+              <i class="fa-sharp fa-solid fa-wand-magic-sparkles"></i>
+            </button>
+
+            <button
+              class="bg-violet-400 w-3/4 flex-auto text-white font-bold py-1 px-1 rounded active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 hover:bg-pink-600"
+              id="Submit"
+            >
+              Submit
+            </button>
           </div>
         </div>
+
+        <div>
+          <img
+            id="“tagline”"
+            src="./assets/images/genie.png"
+            alt="“Genie"
+            holding
+            a
+            dinner
+            plate.“
+          />
+        </div>
+      </div>
+    </div>
+
+    <div id="recipes" class="container">
+      <div class="grid grid-cols-1 md:grid-cols-3">
+        <div
+          id="recipe-1"
+          class="col-span-1 bg-cover bg-center"
+          style="background-image: url('./assets/images/recipecolumn.png')"
+        ></div>
+        <div
+          id="recipe-2"
+          class="col-span-1 bg-cover bg-center"
+          style="background-image: url('./assets/images/recipecolumn.png')"
+        ></div>
+        <div
+          id="recipe-3"
+          class="col-span-1 bg-cover bg-center"
+          style="background-image: url('./assets/images/recipecolumn.png')"
+        >
+          <img
+            id="“logo”"
+            src="./assets/images/recipecolumn.png"
+            alt="“Dinner"
+            Genie.“
+          />
+        </div>
+      </div>
+    </div>
+
+    <div id="lamp" class="container">
+      <div class="grid grid-cols-1 md:grid-cols-1">
+        <div>
+          <img
+            id="“tagline”"
+            class="getRandomCocktail"
+            src="./assets/images/lamp.png"
+            alt="“Lamp"
+            says
+            triple
+            click
+            for
+            a
+            surprise.“
+          />
+        </div>
+      </div>
     </div>
 
     <div class="flex items-center justify-center"></div>
-    <div id="cocktailModal" class="hidden fixed top-0 left-0 w-fit h-fit bg-opacity-50 bg-gray-300 z-50 p-4 m-4 border-8 border-x-orange-500 border-y-orange-700 flex items-center justify-center">
+    <div
+      id="cocktailModal"
+      class="hidden fixed top-0 left-0 w-fit h-fit bg-opacity-50 bg-gray-300 z-50 p-4 m-4 border-8 border-x-orange-500 border-y-orange-700 flex items-center justify-center"
+    >
       <div>
-          <div class="bg-amber-400 p-4 max-w-lg mx-auto">
-              <h2 class="text-xl text-center text-bold" id="cocktailName"></h2>
-              <h3>Ingredients:</h3>
-              <ul class="list-style-type: decimal;" id="ingredientsList"></ul>
-              <h3>Instructions:</h3>
-              <p id="instructions" class="mb"></p>
-              <button class="text-sm text-center text-bold" id="closeModal">Close</button>
-          </div>
+        <div class="bg-amber-400 p-4 max-w-lg mx-auto">
+          <h2 class="text-xl text-center text-bold" id="cocktailName"></h2>
+          <h3>Ingredients:</h3>
+          <ul class="list-style-type: decimal;" id="ingredientsList"></ul>
+          <h3>Instructions:</h3>
+          <p id="instructions" class="mb"><br /></p>
+          <button
+            class="bg-pink-400 flex-auto text-white font-bold py-1 px-1 rounded active:bg-pink-700 focus:outline-none focus:ring focus:ring-pink-300 hover:bg-pink-600"
+            id="closeModal"
+          >
+            Close
+          </button>
+        </div>
       </div>
-  </div>
-  
-   <div id="footer">
-        <nav>
-          <img id=“footer” src="./assets/images/footer.png" alt=“footer style.“/>
-                <a href="#top">Back to Top</a>
-        </nav>
+    </div>
 
-    </div> 
+    <div id="footer">
+      <nav>
+        <img
+          id="“footer”"
+          src="./assets/images/footer.png"
+          alt="“footer"
+          style.“
+        />
+        <a href="#top">Back to Top</a>
+      </nav>
+    </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="./assets/js/script.js"> </script>
-</body>
+    <script src="./assets/js/script.js"></script>
+  </body>
 </html>
