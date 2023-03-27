@@ -63,7 +63,8 @@ function loadIngredients() {
     var divEl = document.createElement("div");
     var buttonEl = document.createElement("button");
     divEl.textContent = " " + ingredientsArray[i] + " ";
-    divEl.style = "border: 1px solid gold; border-radius: 10px; padding: 3px 5px; margin: 5px";
+    divEl.style =
+      "border: 1px solid gold; border-radius: 10px; padding: 3px 5px; margin: 5px";
     divEl.setAttribute("id", ingredientsArray[i]);
     buttonEl.innerHTML = "<span style='color:red'> X </span>";
     buttonEl.classList.add("delete");
@@ -122,48 +123,50 @@ function recipeToPage(recipes) {
     const recipeDiv = $(`#recipe-${i + 1} .recipe-content`);
     recipeDiv.empty();
 
-    const contentWrapper = $('<div></div>').addClass('flex flex-col items-center justify-center');
+    const contentWrapper = $("<div></div>").addClass(
+      "flex flex-col items-center justify-center"
+    );
 
-    const recipeName = $('<h2></h2>')
-    .text(recipe.title)
-    .css({ 'font-size': '1.3rem', 'font-weight': 'bold', 'word-wrap': 'break-word'});
+    const recipeName = $("<h2></h2>").text(recipe.title).css({
+      "font-size": "1.3rem",
+      "font-weight": "bold",
+      "word-wrap": "break-word",
+    });
     contentWrapper.append(recipeName);
 
-    const recipeImage = $('<img></img>')
-      .attr('src', recipe.image)
-      .attr('alt', recipe.title)
-      .addClass('recipe-image');
+    const recipeImage = $("<img></img>")
+      .attr("src", recipe.image)
+      .attr("alt", recipe.title)
+      .addClass("recipe-image");
     contentWrapper.append(recipeImage);
 
-    const usedIngredientsTitle = $('<h4></h4>')
-    .text('Ingredients Used:')
-    .css({ 'font-size': '1.1rem', 'font-weight': 'bold' });
+    const usedIngredientsTitle = $("<h4></h4>")
+      .text("Ingredients Used:")
+      .css({ "font-size": "1.1rem", "font-weight": "bold" });
     contentWrapper.append(usedIngredientsTitle);
 
-    const usedIngredientsList = $('<ul></ul>');
-    recipe.usedIngredients.forEach(ingredient => {
-      let usedIngredientName = $('<li></li>').text(ingredient.name);
+    const usedIngredientsList = $("<ul></ul>");
+    recipe.usedIngredients.forEach((ingredient) => {
+      let usedIngredientName = $("<li></li>").text(ingredient.name);
       usedIngredientsList.append(usedIngredientName);
     });
     contentWrapper.append(usedIngredientsList);
 
-    const missedIngredientsTitle = $('<h4></h4>')
-    .text('Ingredients Not Used:')
-    .css({ 'font-size': '1.1rem', 'font-weight': 'bold' });
-    contentWrapper.append(missedIngredientsTitle)
+    const missedIngredientsTitle = $("<h4></h4>")
+      .text("Ingredients Not Used:")
+      .css({ "font-size": "1.1rem", "font-weight": "bold" });
+    contentWrapper.append(missedIngredientsTitle);
 
-    const missedIngredientsList = $('<ul></ul>');
-    recipe.missedIngredients.forEach(ingredient => {
-      let missedIngredientName = $('<li></li>').text(ingredient.name);
+    const missedIngredientsList = $("<ul></ul>");
+    recipe.missedIngredients.forEach((ingredient) => {
+      let missedIngredientName = $("<li></li>").text(ingredient.name);
       missedIngredientsList.append(missedIngredientName);
     });
     contentWrapper.append(missedIngredientsList);
 
-  
     recipeDiv.append(contentWrapper);
   }
 }
-
 
 // This function displays random cocktail on DOM
 const Drinkies = {
