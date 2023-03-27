@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Hungry Diary</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital@1&display=swap" rel="stylesheet">
+    <link href="https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772" crossorigin>
+</head>
+  <!-- beginning of div  --> 
+<body onload="slider()">
+     <div class="container">
+          <div class="nav-wrapper">
+             <div class="left-side">
+                  <div class="nav-link-wrapper .active-nav-link">
+                       <a href="index.html">Home</a>
+                  </div>
+  
+                  <div class="nav-link-wrapper">
+                       <a href="about.html">Hungry Diary</a>
+                  </div>
+             </div>
+  
+             <div class="right-side">
+                  <div class="brand">
+                       <div></div>
+                  </div>
+             </div>
+     </div>
+ <div class="banner">
+     <div class="slider">
+       <img src="assets/images/images/p2.jpg" id="slideImg">
+    </div>
+          <div class="overlay">
+               <div class="content">
+                    <h1>LETS START OUR Dinner Genie JOURNEY!</h1>
+                    <h3>Subscribe to start your recipe journey!</h3>
+               <div class="mealContainer">
+                <div class="row text-center">
+                  <h3>Feeling Hungry?</h3>
+                  <h5>Get a random meal by clicking button!</h5>
+                    <div>
+                         <button type="getMealButton" id="get-meal"<a href="/index3.html">Get Meal</a></button>
+                         <button type="button" class="meal">Hungry Diary</button>
+                    </div>
+                    <div id="meal" class="row-meal"></div>
+               </div>
+              </div>
+            </div>
+               <!-- <div class="navbar">
+             <div class="logo">
+                <img src="image/logo.png"
+             </div>
+             <div class="menu-icon">
+               <img src="image/user.png">
+               <img src="image/diary.png">
+               <img src="image/menu.png">
+             </div>
+          </div>  -->
+     </div>         
+ </div>
+ <script src="js/script2.js"> </script>
+<script>
+ var slideImg = document.getElementById("slideImg");
+
+     var images = [
+          "assets/images/images/p1.jpg",
+          "assets/images/images/p4.jpg",
+          "assets/images/images/p5.jpg",
+          "assets/images/images/p6.jpg",
+          "assets/images/images/p7.jpg",
+          "assets/images/images/p8.jpg",
+          "assets/images/images/p9.jpg",
+          "assets/images/images/p10.jpg",
+          "assets/images/images/p12.jpg",
+];
+     var len = images.length;
+     var i = 0;
+
+     function slider(){
+          if(i > len-1){
+               i = 0;
+          }
+          slideImg.src = images[i];
+          i++;
+          setTimeout('slider()',3000);
+     }
+</script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+/* Styles for sign up page and stored recipes. */
+Nav Styles
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 38px;
+}
+
+.left-side {
+  display: flex;
+}
+
+.nav-wrapper > .left-side > div {
+  margin-right: 20px;
+  font-size: 0.9em;
+  text-transform: uppercase;
+}
+
+.nav-link-wrapper {
+  height: 22px;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.5s;
+}
+
+.nav-link-wrapper a {
+  color: #8a8a8a;
+  text-decoration: none;
+  transition: color 0.5s;
+}
+
+.nav-link-wrapper:hover {
+  border-bottom: 1px solid black;
+}
+
+.nav-link-wrapper a:hover {
+  color: black;
+}
+.active-nav-link {
+  border-bottom: 1px solid black;
+}
+.active-nav-link a {
+  color: black !important;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.banner{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.slider{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+}
+#slideImg{
+  width: 100%;
+  height: 100%;
+  animation: zoom 3s linear infinite;
+}
+
+@keyframes zoom{
+  0%{
+    transform: scale(1.3);
+  }
+  15%{
+    transform: scale(1);
+  }
+  85%{
+    transform: scale(1);
+  }
+  100%{
+    transform: scale(1.3);
+  }
+}
+.overlay{
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7));
+  position: absolute;
+  top: 0;
+}
+.content{
+    width: 60%;
+    margin: 160px auto 0;
+    text-align: center;
+    color: white;
+  }
+  .content h1{
+    font-size: 60px;
+  }
+  .content h3{
+    width: 80%;
+    margin: 20px auto 100px;
+    font-weight: 100px;
+    line-height: 25px;
+  } 
+  button{
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 0 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px sold #fe7250;
+    background-color: #fe7250;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  button:hover{
+    background: transparent;
+    border: 2px sold #fff;
+  }
+  .btn-2{
+    border: 2px solid #fff;
+    background: transparent;
+  }
+  .btn-2:hover{
+    border: 2px solid #fd7250;
+    background: #fd7250;
+  }
+  
+  .videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+  }
+  .videoWrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }

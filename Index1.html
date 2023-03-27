@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinner Genie</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital@1&display=swap" rel="stylesheet">
+</head>
+  <!-- beginning of div  --> 
+<body onload="slider()">
+     <div class="container">
+          <div class="nav-wrapper">
+             <div class="left-side">
+                  <div class="nav-link-wrapper .active-nav-link">
+                       <a href="index.html">Home</a>
+                  </div>
+  
+                  <div class="nav-link-wrapper">
+                       <a href="about.html">Hungry Diary</a>
+                  </div>
+             </div>
+  
+             <div class="right-side">
+                  <div class="brand">
+                       <div></div>
+                  </div>
+             </div>
+     </div>
+ <div class="banner">
+     <div class="slider">
+       <img src="assets/images/images/p2.jpg" id="slideImg">
+    </div>
+          <div class="overlay">
+            <div class="container">
+               <div class="content">
+                <div class="clearfix">
+                    <div class="card">
+                      <h2>Sign Up</h2>
+                      <form method="POST">
+                        <div class="input-group">
+                          <label for="first-name">First Name</label>
+                          <input type="text" name="first-name" id="first-name" placeholder="Jane" />
+                        </div>
+                        <div class="input-group">
+                          <label for="last-name">Last Name</label>
+                          <input type="text" name="last-name" id="last-name" placeholder="Doe" />
+                        </div>
+                        <div class="input-group">
+                          <label for="email">Email</label>
+                          <input type="text" name="email" id="email" placeholder="janedoe@mail.com" />
+                        </div>
+                        <div class="input-group">
+                          <label for="password">Password</label>
+                          <input type="password" name="password" id="password" placeholder="supersecure123" />
+                        </div>
+                        <div id="msg"></div>
+                        <button id="sign-up"><a href="/index2.html">Sign Up</a></button>
+                      </form>
+                    </div>
+                  </div>
+     </div>         
+ </div>
+<script src="js/script1.js"> </script>
+<script>
+ var slideImg = document.getElementById("slideImg");
+
+     var images = [
+          "assets/images/images/p1.jpg",
+          "assets/images/images/p4.jpg",
+          "assets/images/images/p5.jpg",
+          "assets/images/images/p6.jpg",
+          "assets/images/images/p7.jpg",
+          "assets/images/images/p8.jpg",
+          "assets/images/images/p9.jpg",
+          "assets/images/images/p10.jpg",
+          "assets/images/images/p12.jpg",
+];
+     var len = images.length;
+     var i = 0;
+
+     function slider(){
+          if(i > len-1){
+               i = 0;
+          }
+          slideImg.src = images[i];
+          i++;
+          setTimeout('slider()',3000);
+     }
+</script>
+</body>
+</html>
