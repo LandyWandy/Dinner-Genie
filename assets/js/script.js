@@ -134,6 +134,9 @@ function recipeToPage(recipes) {
     });
     contentWrapper.append(recipeName);
 
+    // const recipeImage = $('<img>', {
+    //    src: 'file:///C:/Users/parkoperationsmanager/bootcamp/Class Activities/07-Project-1/TeamProjectUpdated/Team-Project/assets/images/wish1.png'
+    // });
     const recipeImage = $("<img></img>")
       .attr("src", recipe.image)
       .attr("alt", recipe.title)
@@ -141,7 +144,7 @@ function recipeToPage(recipes) {
     contentWrapper.append(recipeImage);
 
     const usedIngredientsTitle = $("<h4></h4>")
-      .text("Ingredients Used:")
+      .text("Dream ingredients:")
       .css({ "font-size": "1.1rem", "font-weight": "bold" });
     contentWrapper.append(usedIngredientsTitle);
 
@@ -153,7 +156,7 @@ function recipeToPage(recipes) {
     contentWrapper.append(usedIngredientsList);
 
     const missedIngredientsTitle = $("<h4></h4>")
-      .text("Ingredients Not Used:")
+      .text("Additional ingredients:")
       .css({ "font-size": "1.1rem", "font-weight": "bold" });
     contentWrapper.append(missedIngredientsTitle);
 
