@@ -88,6 +88,7 @@ function loadIngredients() {
     });
   });
 }
+var scroll = document.querySelector('#recipes');
 
 function fetchRecipe() {
   // ingredientsArray = JSON.parse(localStorage.getItem('ingredients'))
@@ -111,6 +112,7 @@ function fetchRecipe() {
     .then((response) => {
       recipeToPage(response);
       // render page using response variable
+      scroll.scrollIntoView({ behavior: 'smooth' });
     })
     .catch((err) => console.error(err));
 }
@@ -129,9 +131,6 @@ function recipeToPage(recipes) {
     .css({ 'font-size': '1.3rem', 'font-weight': 'bold', 'word-wrap': 'break-word'});
     contentWrapper.append(recipeName);
 
-   // const recipeImage = $('<img>', {
-   //    src: 'file:///C:/Users/parkoperationsmanager/bootcamp/Class Activities/07-Project-1/TeamProjectUpdated/Team-Project/assets/images/wish1.png'
-   // });
     const recipeImage = $('<img></img>')
       .attr('src', recipe.image)
       .attr('alt', recipe.title)

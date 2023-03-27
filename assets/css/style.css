@@ -19,3 +19,22 @@
   height: auto; /* Set height to auto, so it can adjust with the content */
   min-height: 400px; /* Set a minimum height to ensure enough space for the content */
 }
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip:hover::before {
+  content: attr(title);
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding: 0.5em;
+  background-color: #2e1678;
+  color: #fff;
+  border-radius: 0.25em;
+  font-size: 0.8em;
+}
+
