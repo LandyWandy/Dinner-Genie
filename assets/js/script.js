@@ -50,6 +50,7 @@ document.getElementById("add").addEventListener("click", function () {
 
 document.getElementById("wand-btn").addEventListener("click", function () {
   // call api with all ingredients.
+  event.preventDefault();
   fetchRecipe();
 });
 
