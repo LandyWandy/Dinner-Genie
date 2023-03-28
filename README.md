@@ -2,25 +2,30 @@
 
 ### Dinner Genie
 
+![Dinner Genie](/assets/images/sitedemo.jpg)
+
+## Concept
+
+- Create a nostalgic website similar to a fortune telling game. Showcase how logic can be disguised as magic. 
+- To enjoy the process of deciding what to eat and infusing the mundane with a sense of wonder.
+
 ## Project description
 
-- This project is a calendar that specializes in planning out your meals based on the ingredients you have
+- The site greets you with playful imagery and a friendly genie. Provide the Genie with 3 ingredients of your choice and Genie's selects your dream dinner recipes.  
 
-- After MVP will add fun features such as meals based on Weather API/Seasons etc.
-
-- After MVP potentially add calendar functionality
+- Empower folks to create their own meals at home. To infuse bright colors and a sense of fun to encourage folks to find the creativity and play in eating at home.
 
 ## User story
 
-- As an indecisive person I want a recommendation based on the items I have in my fridge
+- As an indecisive eater
 
-- I want a calendar that helps me plan my meals
+- I want the perfect recipe based on my top 3 favorite ingredients
 
-- So that I know what I'm going to eat, and the nutrients of that meal for the day
+- So that I know what I'm going to eat, and add some magic to my day.
 
-- I want to be able to list out the ingredients in my fridge
+- I want to be able to store the ingredients in local storage
 
-- So that a recipe is generated based on those ingredients
+- I want a cocktail pairing suggestion.
 
 ## APIs to be used
 
@@ -28,24 +33,39 @@
 
 - The Cocktail DB API Documentation https://rapidapi.com/thecocktaildb/api/the-cocktail-db/
 
-- Dayjs https://day.js.org/
 
 ## Rough breakdown of tasks
+
+- Rosa : HTML + JavaScript
+
+- Bella : JavaScript + Styling
+
+- Meghan : Design + JavaScript
+
+- Valerie : Vision + Planning
+
+- Landon : JavaScript + JQuery
+
+- Rafael : Wireframe + CSS
 
 - make sure we can access github and actually work on this lol
 
 ## Technologies used
 
-- Tailwind CSS
+- HTML
+- TAILWIND
+- Font AWESOME
+- CSS
+- JAVASCRIPT
+- JQUERY
+- CANVA
+- Procreate
 
-- Jquery
+## Future Development
 
-- 
-
-## MVP 
-
-#### A web application that will give you a food recommendation based on the ingredients you have and a random drink 🍻
-
-c934e6b007msh76d8b17e732ba94p14495ejsndf11a0d68e49
-
-4373181a13mshb854ccce485fbcfp1ec2f2jsn4a150d9d81a6
+- Autofill input textbox.
+- Ability to save recipes.
+- Syncing with a calendar.
+- Stronger API images.
+- Refinement of responsiveness.
+- User login with ingredient and recipe stats.
